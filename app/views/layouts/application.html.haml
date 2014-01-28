@@ -1,0 +1,31 @@
+%html
+  %head
+    = stylesheet_link_tag "test"
+    = stylesheet_link_tag "landing"
+    %link{:href=>"//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", :rel=>"stylesheet"}
+    = stylesheet_link_tag "social-buttons"
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
+    = javascript_include_tag 'http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js'
+    = javascript_include_tag 'bootstrap.min.js'
+  %body.landing
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          .nav-collapse.navbar-responsive-collpase.collapse
+            %ul.nav.pull-left
+              %li
+                =image_tag('brand_slice.gif',:class=>'brand-slice')
+              %li
+                =link_to image_tag('event_slice.gif',:class=>'icon-slice'), events_path
+              %li
+                =link_to image_tag('photo_slice.gif',:class=>'icon-slice',:class=>'icon-slice'), libraries_path
+              %li
+                =link_to image_tag('contact.gif',:class=>'icon-slice'), new_message_path
+            %ul.nav.pull-right
+              %li
+                =link_to "logout",:controller=>'devise/sessions',:action=>'destroy'
+              %li
+                =link_to image_tag('signup.gif',:class=>'icon-slice'),new_user_registration_path
+              %li
+                =link_to image_tag('login.gif',:class=>'icon-slice'), new_user_session_path
+    =yield
