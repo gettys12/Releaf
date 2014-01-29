@@ -5,15 +5,15 @@
         .span4.first
           =image_tag(@library_lists.first.first.resources.last.image.url,:class=>"img-thumbnail library")
           %h3.caption
-            ="Library Name"
+            ="Rawley Loken Planting"
         .span4.second
           =image_tag(@library_lists.first.second.resources.last.image.url, :class=>"img-thumbnail library")
           %h3.caption
-            ="Library Name"
+            ="South Run Planting"
         .span4.third
           =image_tag(@library_lists.first.last.resources.last.image.url,:class=>"img-thumbnail library")
           %h3.caption
-            ="Library Name"
+            ="2007 Photos"
       -@library_rest.each do |nxt_lib_lst|
         .item
           .span4.first
